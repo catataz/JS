@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a,b,c,d,e;
+        for(a=0; a<5; a++){
+            for(b=0;b<=a;b++){
+                document.write("☆");
+            }
+            for(c=0;c<4-a ;c++){
+                document.write("　");
+            }
+            for(d=0; d<3-a; d++){
+                document.write("　");
+            }
+            for(e=0; e<=a; e++){
+                if(a==4 && e==4){
+                  
+                    document.write("　"); 
+                 
+                          
+                }
+                else{
+                    document.write("☆");
+                }
+                
+            } 
+            
+            document.write("<br>");
+        }
+        
+        for(a=0; a<4; a++){
+            for(b=0;b<4-a;b++){
+                document.write("☆");
+            }
+            for(c=0;c<=a ;c++){
+                document.write("　");
+            }
+            for(d=0; d<=a-1; d++){
+                document.write("　");
+            }
+            for(e=0; e<4-a; e++){
+               
+                    document.write("☆");
+   
+            } 
+           
+            document.write("<br>");
+        }
+        
+
+
+    </script>
+</body>
+</html>

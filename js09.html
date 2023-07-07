@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var saram = prompt("가위 바위 보를 입력하세요~<1.바위 2.가위. 3.보>","0");
+        document.write("<h1>가위 바위 보 대결하기~</h1>");
+        var com = Math.floor(Math.random()*3)+1 // floor 내림
+
+        if(saram==1){
+            document.write("<img src=1.png>")
+            
+            if(com==1) {
+                document.write("<img src=1.png>")
+                document.write("<br>")
+                document.write("<img src=draw.png>")  
+            }
+           else if(com==2) {
+                document.write("<img src=2.png>")
+                document.write("<br>")
+                document.write("<img src=v.png>")
+            }
+            else if(com==3) {
+                document.write("<img src=3.png>")
+                document.write("<br>")
+                document.write("<img src=d.png>")
+            }
+        }
+        else if(saram==2){
+            document.write("<img src=2.png>")
+            
+            if(com==1) {
+                document.write("<img src=1.png>")
+                document.write("<br>")
+                document.write("<img src=d.png>")  
+            }
+            else if(com==2) {
+                document.write("<img src=2.png>")
+                document.write("<br>")
+                document.write("<img src=draw.png>")
+            }
+            else if(com==3) {
+                document.write("<img src=3.png>")
+                document.write("<br>")
+                document.write("<img src=v.png>")
+            }
+        }
+        else if(saram==3){
+            document.write("<img src=3.png>")
+            
+            if(com==1) {
+                document.write("<img src=1.png>")
+                document.write("<br>")
+                document.write("<img src=v.png>")  
+            }
+            else if(com==2) {
+                document.write("<img src=2.png>")
+                document.write("<br>")
+                document.write("<img src=d.png>")
+            }
+            else if(com==3) {
+                document.write("<img src=3.png>")
+                document.write("<br>")
+                document.write("<img src=draw.png>")
+            }
+        }    
+        
+
+
+
+        
+//이겼다 졌다 이미지 추가.
+    </script>
+
+</body>
+</html>
+
