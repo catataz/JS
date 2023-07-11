@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .bt{
+            background-color: #535353;
+            width: 60px;
+            height: 60px;
+            font-size: 40px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        .bt:hover{
+            background-color: aqua;
+        }
+        .bt1{
+            background-color: #ee6205;
+            width: 60px;
+            height: 126px;
+            font-size: 40px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        .bt2{
+            background-color: #ee0303;
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        .in{
+            background-color: rgb(0,0,0);
+            width: 280px;
+            height: 120px;
+            font-size: 40px;
+            color:azure;
+            border-radius: 20px;
+            text-align: right;           
+        }
+        .zero{
+            background-color: #535353;
+            width: 130px;
+            height: 60px;
+            font-size: 40px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        .tk{
+            background-color: #ee6205;
+            width: 60px;
+            height: 60px;
+            font-size: 40px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        .name{
+            background-color: rgb(0,0,0);
+            width: 280px;
+            height: 20px;
+            font-size: 5px;
+            color:azure;
+            border-radius: 20px;
+            text-align: right;           
+        }
+    </style>
+
+  
+    <table style="width :280px; height:160px; border:4; border-radius: 20px; background-color: black;">
+       
+        <tr>
+            <td colspan="4"><input type="text" style="border:0 solid black" id = "input" class="in"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><button id ="name" style="border:0 solid black" class="name">by. 임용현</button></td>
+        </tr>
+            <td><button id ="sin" class="bt2">sin</button></td>
+            <td><button id ="cos" class="bt2">cos</button></td>
+            <td><button id ="tan" class="bt2">tan</button></td>
+            <td><button id ="sqrt" class="bt2">√</button></td>
+        <tr>
+            <td><button id ="ac" class="bt2">AC</button></td>
+            <td><button id ="div" class="tk">/</button></td>
+            <td><button id ="mul" class="tk">*</button></td>
+            <td><button id ="back" class="tk">←</button></td>   
+        </tr>
+        <tr>
+            <td><button id ="seven" class="bt">7</button></td>
+            <td><button id ="eight" class="bt">8</button></td>
+            <td><button id ="nine" class="bt">9</button></td>
+            <td><button id ="plus" class="tk">+</button></td>
+        </tr>
+        <tr>
+            <td><button id ="four" class="bt">4</button></td>
+            <td><button id ="five" class="bt">5</button></td>
+            <td><button id ="six" class="bt">6</button></td>
+            <td><button id ="minus" class="tk">-</button></td>           
+        </tr>
+        <tr>
+            <td><button id ="one" class="bt">1</button></td>
+            <td><button id ="two" class="bt">2</button></td>
+            <td><button id ="three" class="bt">3</button></td>     
+            <td rowspan="2"><button id ="enter" class="bt1">=</button></td>
+        </tr>
+        <tr>
+            <td colspan ="2"><button id ="zero" class="zero">0</button></td>
+            <td><button id ="com" class="bt">.</button></td>
+              
+        </tr>
+    </table>
+
+    <script>
+        
+        const input = document.getElementById("input");
+        //숫자
+        document.getElementById("zero").addEventListener('click',on0);
+        document.getElementById("one").addEventListener('click',on1);
+        document.getElementById("two").addEventListener('click',on2);
+        document.getElementById("three").addEventListener('click',on3);
+        document.getElementById("four").addEventListener('click',on4);
+        document.getElementById("five").addEventListener('click',on5);
+        document.getElementById("six").addEventListener('click',on6);
+        document.getElementById("seven").addEventListener('click',on7);
+        document.getElementById("eight").addEventListener('click',on8);
+        document.getElementById("nine").addEventListener('click',on9);
+        document.getElementById("com").addEventListener('click',com); // . 
+        //연산
+        document.getElementById("plus").addEventListener('click',onplus);
+        document.getElementById("minus").addEventListener('click',onminus);
+        document.getElementById("mul").addEventListener('click',onmul); //곱
+        document.getElementById("div").addEventListener('click',ondiv); //나머지
+        document.getElementById("enter").addEventListener('click',enter);
+        document.getElementById("sin").addEventListener('click',sin);
+        document.getElementById("cos").addEventListener('click',cos);
+        document.getElementById("tan").addEventListener('click',tan);
+        document.getElementById("sqrt").addEventListener('click',sqrt);
+        //특수버튼 
+        document.getElementById("ac").addEventListener('click',clear); //초기화
+        
+        document.getElementById("back").addEventListener('click',back); //backspace
+
+ //수치
+        ar =[];
+       
+        function on0(){
+            ar.push(0)
+            input.value = ar.join("");
+        }
+        function on1(){
+            ar.push(1)
+            input.value = ar.join("");
+        }
+        function on2(){
+            ar.push(2)
+            input.value = ar.join("");
+        }
+        function on3(){
+            ar.push(3)
+            input.value = ar.join("");
+        }
+        function on4(){
+            ar.push(4)
+            input.value = ar.join("");
+        }
+        function on5(){
+            ar.push(5)
+            input.value = ar.join("");
+        }        
+        function on6(){
+            ar.push(6)
+            input.value = ar.join("");
+        }
+        function on7(){
+            ar.push(7)
+            input.value = ar.join("");
+        }
+        function on8(){
+            ar.push(8)
+            input.value = ar.join("");
+        }
+        function on9(){
+            ar.push(9)
+            input.value = ar.join("");
+        }
+        function com(){
+            ar.push('.')
+            input.value = ar.join("");
+        }
+
+
+
+
+        //연산
+        function onplus(){
+            ar.push("+")
+            input.value = ar.join("");
+        }
+        function onminus(){
+            ar.push("-")
+            input.value = ar.join("");
+        }
+        function onmul(){
+            ar.push("*")
+            input.value = ar.join("");
+        }
+        function ondiv(){
+            ar.push("/")
+            input.value = ar.join("");
+        }
+        function enter(){
+            var sum = ar.join("");
+            input.value = eval(sum);
+            ar=[];
+        }
+        function sin(){
+            var sum = ar.join("");
+            input.value = Math.sin((eval(sum) * 3.141592) / 180);
+            ar=[];
+        }
+        function cos(){
+            var sum = ar.join("");
+            input.value = Math.cos((eval(sum) * 3.141592) / 180);
+            ar=[];
+        }
+        function tan(){
+            var sum = ar.join("");
+            input.value = Math.tan((eval(sum) * 3.141592) / 180);
+            ar=[];
+        }
+        function sqrt(){
+            var sum = ar.join("");
+            input.value = Math.sqrt(eval(sum),2);
+            ar=[];
+        }
+     
+
+             
+        //특수
+        function back(){
+            ar.splice(ar.length-1,1);
+            input.value = ar.join('');
+            
+        }
+        function clear(){
+            ar=[];
+            input.value = '';
+            
+        }
+    </script>
+</body>
+</html>
