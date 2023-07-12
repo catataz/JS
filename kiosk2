@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .back{
+        background-color: rgb(250, 245, 238);
+    }
+    
+    .inputbox{
+        width: 55px;
+        height: 30px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .button_1{
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .button_2{
+        width: 140px;
+        height: 25px;
+        font-size: 15px;
+        text-align: center;
+    }
+    .title{
+        font-size: 55px;
+        color:brown;
+        text-align: center;
+    }
+    .name{
+     height: 1px;
+     font-size: 20px;
+     color:rgb(94, 62, 62);
+     
+ }
+</style>
+<body>
+    <table border = "1" class = "back">
+        <tr> <td colspan="4" align = "center" class = "title"> 커피 사세요~</td> </tr>
+        <tr>
+            <td align="center"><img src="aa.png" width="150" height="200"><br>
+                <p class="name">아메리카노 4000원</p><br>
+                <button id = 'aaminus' class ="button_1">-</button><input type="text" id ='aainput' class="inputbox"><button id="aaplus"class ="button_1">+</button></td>
+            <td align="center"><img src="banil.png" width="150" height="200"><br>
+                <p class="name">바닐라라떼 4500원</p><br>
+                <button id = 'banilminus'  class ="button_1">-</button><input type="text" id ='banilinput' class="inputbox"><button id="banilplus"  class ="button_1">+</button></td>
+            <td align="center"><img src="cafelatte.png" width="150" height="200"><br>
+                <p class="name">카페라떼 4500원</p><br>
+                <button id = 'latteminus'  class ="button_1">-</button><input type="text" id ='latteinput' class="inputbox"><button id="latteplus"  class ="button_1">+</button></td>
+            <td align="center"><img src="cafemoka.PNG" width="150" height="200"><br>
+                <p class="name">카페모카 4500원</p><br>
+                <button id = 'mokaminus'  class ="button_1">-</button><input type="text" id ='mokainput' class="inputbox"><button id="mokaplus"  class ="button_1">+</button></td>         
+        </tr>
+        <tr>
+            <td align="center"><button><img src="choco.png" width="150" height="200"></button><br>
+                <p class="name">초코라떼 4500원</p><br>
+                <button id = 'chocominus'  class ="button_1">-</button><input type="text" id ='chocoinput' class="inputbox"><button id="chocoplus"  class ="button_1">+</button></td>
+            <td align="center"><img src="icetea.png" width="150" height="200"><br>
+                <p class="name">아이스티 3000원</p><br>
+                <button id = 'iceminus'  class ="button_1">-</button><input type="text" id ='iceinput' class="inputbox"><button id="iceplus"  class ="button_1">+</button></td>
+            <td align="center"><img src="milk.PNG" width="150" height="200"><br>
+                <p class="name">밀크티 5000원</p><br>
+                <button id = 'milkminus'  class ="button_1">-</button><input type="text" id ='milkinput' class="inputbox"><button id="milkplus"  class ="button_1">+</button></td>
+            <td align="center"><img src="mint.png" width="150" height="200"><br>
+                <p class="name">민트초코 5000원</p><br>
+                <button id = 'mintminus'  class ="button_1">-</button><input type="text" id ='mintinput' class="inputbox"><button id="mintplus"  class ="button_1">+</button></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center" ><button id="btn_set_clear" class ="button_2">초기화</button></td>
+            <td colspan="2" align="center"><button id="btn_total_commit" class ="button_2">계산</button></td>
+        </tr>
+        <tr>
+            <td colspan="3" align ="left"><input type ="text" id = 'resultinput'></td>
+        </tr>
+    </table>
+    
+    <script>
+        //input value 
+        const result_input = document.getElementById("resultinput");
+        
+        aa_input = document.getElementById("aainput"); //아아
+        aa_input.value = 0;
+        banil_input = document.getElementById("banilinput"); //바닐
+        banil_input.value = 0;
+        latte_input = document.getElementById("latteinput"); //라떼
+        latte_input.value = 0;
+        moka_input = document.getElementById("mokainput"); //모카
+        moka_input.value = 0;
+        choco_input = document.getElementById("chocoinput"); //초코
+        choco_input.value = 0;
+        ice_input = document.getElementById("iceinput"); //아이스티
+        ice_input.value = 0;
+        milk_input = document.getElementById("milkinput"); //밀크티
+        milk_input.value = 0;
+        mint_input = document.getElementById("mintinput"); //민트초코
+        mint_input.value = 0;
+      
+
+        //+-
+        document.getElementById("aaplus").addEventListener('click',on_aaplus);
+        document.getElementById("aaminus").addEventListener('click',on_aaminus);
+        document.getElementById("banilplus").addEventListener('click',on_banilplus);
+        document.getElementById("banilminus").addEventListener('click',on_banilminus);
+        document.getElementById("latteplus").addEventListener('click',on_latteplus);
+        document.getElementById("latteminus").addEventListener('click',on_latteminus);
+        document.getElementById("mokaplus").addEventListener('click',on_mokaplus);
+        document.getElementById("mokaminus").addEventListener('click',on_mokaminus);
+        document.getElementById("chocoplus").addEventListener('click',on_chocoplus);
+        document.getElementById("chocominus").addEventListener('click',on_chocominus);
+        document.getElementById("iceplus").addEventListener('click',on_iceplus);
+        document.getElementById("iceminus").addEventListener('click',on_iceminus);
+        document.getElementById("milkplus").addEventListener('click',on_milkplus);
+        document.getElementById("milkminus").addEventListener('click',on_milkminus);
+        document.getElementById("mintplus").addEventListener('click',on_mintplus);
+        document.getElementById("mintminus").addEventListener('click',on_mintminus);
+        //result
+        document.getElementById("btn_total_commit").addEventListener('click',on_btn_total_commit);
+        document.getElementById("btn_set_clear").addEventListener('click',on_btn_set_clear);
+        
+        //click
+        result=[];
+        function on_aaplus(){ //아아
+            aa_input.value++;
+            result.splice(result.length - 1, 1);
+            result.push("아메리카노");
+            result_input.value = result 
+            console.log(result);
+    
+        }
+        function on_aaminus(){
+            if(aa_input.value>0){
+                aa_input.value--;
+            }
+           // result.pop()            
+        }
+        function on_banilplus(){ //바닐
+            banil_input.value++;
+            result.push("바닐라라떼");
+        }
+        function on_banilminus(){
+            if(banil_input.value>0){
+                banil_input.value--;
+            }            
+        }
+        function on_latteplus(){ //라떼
+            latte_input.value++;
+        }
+        function on_latteminus(){
+            if(latte_input.value>0){
+                latte_input.value--;
+            }            
+        }
+        function on_mokaplus(){ //모카
+            moka_input.value++;
+        }
+        function on_mokaminus(){
+            if(moka_input.value>0){
+                moka_input.value--;
+            }            
+        }
+        function on_chocoplus(){ //초코
+            choco_input.value++;
+        }
+        function on_chocominus(){
+            if(choco_input.value>0){
+                choco_input.value--;
+            }            
+        }
+        function on_iceplus(){ //아이스티
+            ice_input.value++;
+        }
+        function on_iceminus(){
+            if(ice_input.value>0){
+                ice_input.value--;
+            }            
+        }
+        function on_milkplus(){ //밀크티
+            milk_input.value++;
+        }
+        function on_milkminus(){
+            if(milk_input.value>0){
+                milk_input.value--;
+            }            
+        }
+        function on_mintplus(){ //민트
+            mint_input.value++;
+        }
+        function on_mintminus(){
+            if(mint_input.value>0){
+                mint_input.value--;
+            }            
+        }
+ 
+        //total;
+        function on_btn_total_commit(){
+            sum = (4000 * aa_input.value)+(4500 * banil_input.value)+(4500 * latte_input.value)+(4500 * moka_input.value)+(4500 * choco_input.value)+(3000 * ice_input.value)+(5000 * milk_input.value)+(5000 * mint_input.value)
+            com = sum
+            comma = com.toLocaleString('ko-KR');
+            alert("총 가격은 "+comma+"원 입니다.");
+            //aa_input.value='';
+        }
+        function on_btn_set_clear(){
+            location.reload();
+        }
+
+        function on_result(){
+
+            
+                result.splice(result.length - 1, 1);
+                result_input.value = result + aa_input.value;
+                console.log(result);
+          
+
+                
+         
+            
+        }
+    </script>
+</body>
+</html>
